@@ -32,8 +32,10 @@ class tic_tac_toe:
                 not_selected = False
 
 game = tic_tac_toe(['0', '1', '2', '3', '4', '5', '6', '7', '8'],[(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)])
-game.draw()
-game.player_one()
-game.draw()
-game.player_two()
-game.draw()
+game_not_over = True
+
+while game_not_over:
+    game.draw()
+    game.player_one()
+    game.draw()
+    game.player_two()
