@@ -1,8 +1,8 @@
 class tic_tac_toe:
 
-    def __init__ (self, board, win_combinations):
+    def __init__ (self, board, win_combos):
         self.board = board
-        self.win_combinations = win_combinations
+        self.win_combos = win_combos
 
     def draw(self):
         print()
@@ -31,11 +31,15 @@ class tic_tac_toe:
                 self.board[n] = "O"
                 not_selected = False
 
-game = tic_tac_toe(['0', '1', '2', '3', '4', '5', '6', '7', '8'],[(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)])
-game_not_over = True
+    def check_win(self, player):
+        for combo in self.win_combos:
+            win = True
+            for pos in combo:
+                if self.board[pos] != player:
+                    win = False
+                if win:
+                    win = False
+                    print("Game over.")
 
-while game_not_over:
-    game.draw()
-    game.player_one()
-    game.draw()
-    game.player_two()
+game = tic_tac_toe(['0', '1', '2', '3', '4', '5', '6', '7', '8'],[(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)])
+
