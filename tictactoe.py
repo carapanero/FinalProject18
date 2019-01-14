@@ -15,23 +15,33 @@ class tic_tac_toe:
 #define a function for player one's turn
     def player_one(self):
         not_selected = True
+        numbers = [0,1,2,3,4,5,6,7,8]
         while not_selected:
-            n = int(input("Player 1, chose where to put an X.   "))
-            if self.board[n] == "X" or self.board[n] == "O":
-                print("That spot is taken. Please pick another location.")
-            else:
-                self.board[n] = "X"
-                not_selected = False
+            try:
+                n = int(input("Player 1, chose where to put an X."))
+                if n in numbers:
+                    if self.board[n] == "X" or self.board[n] == "O":
+                        print("That spot is taken. Please pick another location.")
+                    else:
+                        self.board[n] = "X"
+                        not_selected = False
+            except:
+                print("Please enter a valid option")
 #define a function for player two's turn
     def player_two(self):
         not_selected = True
+        numbers = [0,1,2,3,4,5,6,7,8]
         while not_selected:
-            n = int(input("Player 2, chose where to put an O.   "))
-            if self.board[n] == "X" or self.board[n] == "O":
-                print("That spot is taken. Please pick another location.")
-            else:
-                self.board[n] = "O"
-                not_selected = False
+            try:
+                n = int(input("Player 2, chose where to put an X."))
+                if n in numbers:
+                    if self.board[n] == "X" or self.board[n] == "O":
+                        print("That spot is taken. Please pick another location.")
+                    else:
+                        self.board[n] = "O"
+                        not_selected = False
+            except:
+                print("Please enter a valid option.")
 #define a function to see if someone has won the game
     def check_win(self, player):
         for combo in self.win_combos:
