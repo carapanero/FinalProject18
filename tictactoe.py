@@ -1,18 +1,18 @@
+#create a class for tic-tac-toe and initialize variables
 class tic_tac_toe:
-
-
     def __init__ (self, board, win_combos):
         self.board = board
         self.win_combos = win_combos
+#show no one has won the game yet
         self.victory = False
-
+#define a function to draw the game board
     def draw(self):
         print()
         print(self.board[0], self.board[1], self.board[2])
         print(self.board[3], self.board[4], self.board[5])
         print(self.board[6], self.board[7], self.board[8])
         print()
-
+#define a function for player one's turn
     def player_one(self):
         not_selected = True
         while not_selected:
@@ -22,7 +22,7 @@ class tic_tac_toe:
             else:
                 self.board[n] = "X"
                 not_selected = False
-
+#define a function for player two's turn
     def player_two(self):
         not_selected = True
         while not_selected:
@@ -32,24 +32,24 @@ class tic_tac_toe:
             else:
                 self.board[n] = "O"
                 not_selected = False
-
+#define a function to see if someone has won the game
     def check_win(self, player):
         for combo in self.win_combos:
             win = True
             for pos in combo:
                 if self.board[pos] != player:
                     win = False
-
             if win:
                 self.victory = True
                 print("Winner! Game over.")
 
-
-
+#classify game as tic-tac-toe and provide conditions
 game = tic_tac_toe(['0', '1', '2', '3', '4', '5', '6', '7', '8'],[(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)])
-
+#print a welcome statement
+print("Time to play tic-tac-toe!")
+#draw the board
 game.draw()
-
+#create a loop for game play that ends when someone wins
 while not game.victory:
     game.player_one()
     game.draw()
