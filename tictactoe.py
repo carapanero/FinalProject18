@@ -35,7 +35,7 @@ class tic_tac_toe:
             try:
                 n = int(input("Player 2, chose where to put an X."))
                 if n in numbers:
-                    if self.board[n] == "X" or self.board[n] == "O":
+                    if self.board[n] == "O" or self.board[n] == "O":
                         print("That spot is taken. Please pick another location.")
                     else:
                         self.board[n] = "O"
@@ -52,6 +52,9 @@ class tic_tac_toe:
             if win:
                 self.victory = True
                 print("Winner! Game over.")
+            if self.victory == False and all(x.isalpha() for x in self.board):
+                print("You tie. Game over.")
+                self.victory = True
 
 #classify game as tic-tac-toe and provide conditions
 game = tic_tac_toe(['0', '1', '2', '3', '4', '5', '6', '7', '8'],[(0, 1, 2), (3, 4, 5), (6, 7, 8), (0, 3, 6), (1, 4, 7), (2, 5, 8), (0, 4, 8), (2, 4, 6)])
