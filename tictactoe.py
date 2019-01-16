@@ -33,9 +33,9 @@ class tic_tac_toe:
         numbers = [0,1,2,3,4,5,6,7,8]
         while not_selected:
             try:
-                n = int(input("Player 2, chose where to put an X."))
+                n = int(input("Player 2, chose where to put an O."))
                 if n in numbers:
-                    if self.board[n] == "O" or self.board[n] == "O":
+                    if self.board[n] == "X" or self.board[n] == "O":
                         print("That spot is taken. Please pick another location.")
                     else:
                         self.board[n] = "O"
@@ -72,4 +72,6 @@ while not game.victory:
     game.player_two()
     game.draw()
     game.check_win("O")
+    if game.victory == True:
+        break
 
