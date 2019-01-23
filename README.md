@@ -4,6 +4,8 @@ Description of Game: This is a classic game of tic-tac-toe. Player one is asked 
 number that coordinates the spot they would like to select. Player two then recieves the same option. If either player picks a spot that
 was previously chosen, an error message is displaced. The computer checks, in between rounds, to see if someone won or if there is a tie.
 
+Flowchart Link: https://drive.google.com/open?id=1EdTTvU7FdWMzLfOi_5ljTEbhWvMOuFza
+
 Inspiration:
 
 # Note: This website was used to get an extremely rough idea of what I wanted to do.
