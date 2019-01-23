@@ -52,7 +52,7 @@ class tic_tac_toe:
             if win:
                 self.victory = True
                 print("Winner! Game over.")
-            if self.victory == False and all(x.isalpha() for x in self.board):
+            elif self.victory == False and all(x.isalpha() for x in self.board):
                 print("You tie. Game over.")
                 self.victory = True
 
